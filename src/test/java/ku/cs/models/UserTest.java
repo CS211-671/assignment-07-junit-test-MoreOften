@@ -31,5 +31,10 @@ class UserTest {
     }
 
     @Test
-    public void test() {}
+    public void testSetPassword() {
+        User user = new User("user01", "plain-p@ssw0rd");
+        user.setPassword("new-pass123");
+        boolean actual = user.validatePassword("new-pass123");
+        assertTrue(actual);
+    }
 }
